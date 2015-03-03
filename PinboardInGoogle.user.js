@@ -18,8 +18,9 @@
 //
 // ==UserScript==
 // @name          PinboardInGoogle
+// @description   shows your Pinboard bookmarks before Google Search results
+// @icon          https://pinboard.in/bluepin.gif
 // @namespace     com.gasteroprod.lab
-// @description   shows your Pinboard bookmarks alongside Google Search results
 // @version       1.1
 // @updateURL     https://github.com/nhoizey/PinboardInGoogle/raw/master/PinboardInGoogle.user.js
 // @include       http://www.google.*/*
