@@ -103,8 +103,9 @@
         }
         html += '</ol><p>';
         if (nb > 3) {
-          html += '<a class="more" href="" onclick="document.querySelector(\'#PinboardInGoogle\').className=\'\'; t = document.querySelector(\'#PinboardInGoogle .more\'); t.parentNode.removeChild(t); return false;">+ show more</a>&nbsp;';
+          html += '<a class="more" href="" onclick="document.querySelector(\'#PinboardInGoogle\').className=\'\'; t = document.querySelector(\'#PinboardInGoogle .more\'); t.parentNode.removeChild(t); return false;">+ show more</a>';
         }
+        html += '&nbsp;';
         html += '<a href="https://pinboard.in/u:nhoizey' + queryStr + '" style="float: right;">these bookmarks on Pinboard</a>';
         html += '</p>';
 	    }
