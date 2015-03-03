@@ -1,5 +1,13 @@
 # PinboardInGoogle
 
-Showing Pinboard bookmarks alongside Google search results thanks to a little UserScript.
+This userscript shows Pinboard bookmarks before Google search results.
 
-You need to have [Firefox](https://www.mozilla.org/fr/firefox/desktop/) and the [Greasemonkey extension](https://addons.mozilla.org/fr/firefox/addon/greasemonkey/), or [Chrome](https://www.google.com/chrome/).
+## Installation
+
+### Firefox
+
+Install [the Greasemonkey extension](https://addons.mozilla.org/fr/firefox/addon/greasemonkey/) and then open [the raw version of the script](https://github.com/nhoizey/PinboardInGoogle/raw/master/PinboardInGoogle.user.js).
+
+### Chrome
+
+Download [the userscript file](https://github.com/nhoizey/PinboardInGoogle/raw/master/PinboardInGoogle.user.js) and drag it into [the extensions page](chrome://extensions).
