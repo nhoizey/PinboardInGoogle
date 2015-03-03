@@ -4,7 +4,7 @@ This userscript shows Pinboard bookmarks before Google search results.
 
 It gets the query from Google Search's form and use [Pinboard's feeds](https://pinboard.in/howto/#rss) — using the JSON format — to get bookmarks with the same keywords as tags.
 
-<img src="https://raw.githubusercontent.com/nhoizey/PinboardInGoogle/master/raw-sources/screenshot.png" alt="PinboardInGoogle in action" align="center" />
+<img src="https://raw.githubusercontent.com/nhoizey/PinboardInGoogle/master/screenshot.png" alt="PinboardInGoogle in action" align="center" />
 
 ## Installation
 
