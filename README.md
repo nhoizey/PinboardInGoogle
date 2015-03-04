@@ -14,4 +14,6 @@ Install [the Greasemonkey extension](https://addons.mozilla.org/fr/firefox/addon
 
 ### Chrome
 
+**Currently [doesn't work](#7), sorry.**
+
 Download [the userscript file](https://github.com/nhoizey/PinboardInGoogle/raw/master/PinboardInGoogle.user.js) and drag it into [the extensions page](chrome://extensions).
