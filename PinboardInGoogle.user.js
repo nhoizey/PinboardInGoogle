@@ -25,7 +25,8 @@
 // @namespace     com.gasteroprod.lab
 // @version       1.4
 // @downloadURL   https://github.com/nhoizey/PinboardInGoogle/raw/master/PinboardInGoogle.user.js
-// @include       /^https?://www\.google\.*/*
+// @include       http://www.google.*/*
+// @include       https://www.google.*/*
 // @require       https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js
 // @grant         GM_xmlhttpRequest
 // ==/UserScript==
@@ -38,6 +39,8 @@
       jsonData = '';
 
   function handleSearch() {
+    console.info('PinboardInGoogle userscript running…');
+
     // Get the query value
     queryStr = d.querySelector('form[role=search] input[name=q]').value;
 
