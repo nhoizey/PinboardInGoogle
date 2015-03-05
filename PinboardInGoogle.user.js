@@ -19,6 +19,8 @@
 // ==UserScript==
 // @name          PinboardInGoogle
 // @description   shows your Pinboard bookmarks before Google Search results
+// @copyright     2015, Nicolas Hoizey (http://gasteroprod.com/)
+// @license       MIT; https://github.com/nhoizey/PinboardInGoogle/blob/master/LICENSE
 // @icon          https://pinboard.in/bluepin.gif
 // @namespace     com.gasteroprod.lab
 // @version       1.3
