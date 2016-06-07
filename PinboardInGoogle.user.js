@@ -23,7 +23,7 @@
 // @license       MIT; https://github.com/nhoizey/PinboardInGoogle/blob/master/LICENSE
 // @icon          https://pinboard.in/bluepin.gif
 // @namespace     com.gasteroprod.lab
-// @version       1.5
+// @version       1.6
 // @downloadURL   https://github.com/nhoizey/PinboardInGoogle/raw/master/PinboardInGoogle.user.js
 // @include       http://www.google.*/*
 // @include       https://www.google.*/*
