@@ -35,7 +35,7 @@
 // @grant         GM_xmlhttpRequest
 // ==/UserScript==
 
-(function () {
+(function() {
   var msg = '',
     html = '',
     queryStr = '',
@@ -51,12 +51,12 @@
 
   function initResultBox() {
     // Create the results container
-    $('#res').prepend('<div id="PinboardInGoogle" class="small"></div>');
+    $('#rhs_block').prepend('<div id="PinboardInGoogle" class="small" style="width: 456px; height: 282px; display: block; float: right;"></div>');
 
     // Add some style to it
     $('head').append('\
       <style>\
-      #PinboardInGoogle { background-color: #eee; padding: .2em; margin-bottom: 1em; }\
+      #PinboardInGoogle { padding: .2em; margin-bottom: 1em; }\
       #PinboardInGoogle p { margin: .5em 0; }\
       #PinboardInGoogle p.title { color: #aaa; padding-left: 20px; background: url(https://pinboard.in/bluepin.gif) left center no-repeat; }\
       #PinboardInGoogle .how, #PinboardInGoogle .reset { float: right; font-size: .8em; }\
@@ -106,10 +106,10 @@
             'User-Agent': 'PinboardInGoogle',
             'Accept': 'application/json'
           },
-          onload: function (responseDetails) {
+          onload: function(responseDetails) {
             parseFeed(responseDetails);
           },
-          onerror: function (responseDetails) {
+          onerror: function(responseDetails) {
             // Show the error message
             console.log('error…');
           }
@@ -122,11 +122,11 @@
     var bookmarks = JSON.parse(responseDetails.response),
       nb = bookmarks.length,
       max = Math.min(nb, 20),
-      tagsToLinks = function (tags) {
+      tagsToLinks = function(tags) {
         var htmlLinks = '';
 
-        tags.forEach(function (tag) {
-          htmlLinks += `<a href="https://pinboard.in/t:${tag}" target="_blank">${tag}</a> `
+        tags.forEach(function(tag) {
+          htmlLinks += `<a href="https://pinboard.in/t:${tag}" target="_blank">${tag}</a> `;
         });
 
         return htmlLinks;
