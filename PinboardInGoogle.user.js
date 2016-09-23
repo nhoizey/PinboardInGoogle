@@ -51,7 +51,7 @@
 
   function initResultBox() {
     // Create the results container
-    $('#rhs_block').prepend('<div id="PinboardInGoogle" class="small" style="width: 456px; height: 282px; display: block; float: right;"></div>');
+    $('#rhs_block').append('<div id="PinboardInGoogle" class="small" style="width: 456px; height: 282px; display: block; float: right;"></div>');
 
     // Add some style to it
     $('head').append('\
