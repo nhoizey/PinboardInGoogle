@@ -23,7 +23,7 @@
 // @license       MIT; https://github.com/nhoizey/PinboardInGoogle/blob/master/LICENSE
 // @icon          https://pinboard.in/bluepin.gif
 // @namespace     com.gasteroprod.lab
-// @version       1.5
+// @version       1.6
 // @downloadURL   https://github.com/nhoizey/PinboardInGoogle/raw/master/PinboardInGoogle.user.js
 // @include       http://www.google.*/*
 // @include       https://www.google.*/*
@@ -35,16 +35,16 @@
 // @grant         GM_xmlhttpRequest
 // ==/UserScript==
 
-(function() {
+(function () {
   var msg = '',
-      html = '',
-      queryStr = '',
-      jsonUrl = '',
-      jsonData = '';
+    html = '',
+    queryStr = '',
+    jsonUrl = '',
+    jsonData = '';
 
   function handleSecret() {
     var secret = window.location.href.replace(/^.*\/secret:([^\/]+)\/.*$/g, "$1"),
-        user = window.location.href.replace(/^.*\/u:([^\/]+)\/.*$/g, "$1");
+      user = window.location.href.replace(/^.*\/u:([^\/]+)\/.*$/g, "$1");
     GM_setValue('secret', secret);
     GM_setValue('user', user);
   }
@@ -67,7 +67,7 @@
 
   function handleSearch() {
     var user = GM_getValue('user'),
-        secret = GM_getValue('secret');
+      secret = GM_getValue('secret');
 
     // Remove any previously created box
     $('#PinboardInGoogle').remove();
@@ -106,10 +106,10 @@
             'User-Agent': 'PinboardInGoogle',
             'Accept': 'application/json'
           },
-          onload: function(responseDetails) {
+          onload: function (responseDetails) {
             parseFeed(responseDetails);
           },
-          onerror: function(responseDetails) {
+          onerror: function (responseDetails) {
             // Show the error message
             console.log('error…');
           }
@@ -120,8 +120,17 @@
 
   function parseFeed(responseDetails) {
     var bookmarks = JSON.parse(responseDetails.response),
-        nb = bookmarks.length,
-        max = Math.min(nb, 20);
+      nb = bookmarks.length,
+      max = Math.min(nb, 20),
+      tagsToLinks = function (tags) {
+        var htmlLinks = '';
+
+        tags.forEach(function (tag) {
+          htmlLinks += `<a href="https://pinboard.in/t:${tag}" target="_blank">${tag}</a> `
+        });
+
+        return htmlLinks;
+      };
 
     if (nb > 0) {
       initResultBox();
@@ -131,7 +140,7 @@
       for (var i = 0; i < max; i++) {
         html += '<li class="g"><div class="rc">';
         html += '<h3 class="r"><a href="' + bookmarks[i].u + '">' + bookmarks[i].d + '</a></h3>';
-        html += '<div class="f slp">' + bookmarks[i].t.join(', ') + '</div>';
+        html += '<div class="f slp">' + tagsToLinks(bookmarks[i].t) + '</div>';
         html += '<span class="st">' + bookmarks[i].n + '</span>';
         html += '</li>';
       }
