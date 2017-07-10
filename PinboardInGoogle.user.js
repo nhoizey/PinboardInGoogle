@@ -23,31 +23,32 @@
 // @license       MIT; https://github.com/nhoizey/PinboardInGoogle/blob/master/LICENSE
 // @icon          https://pinboard.in/bluepin.gif
 // @namespace     com.gasteroprod.lab
-// @version       1.6
+// @version       2.0
 // @downloadURL   https://github.com/nhoizey/PinboardInGoogle/raw/master/PinboardInGoogle.user.js
 // @include       http://www.google.*/*
 // @include       https://www.google.*/*
-// @include       https://feeds.pinboard.in/rss/*
 // @require       https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js
-// @grant         GM_getValue
-// @grant         GM_setValue
-// @grant         GM_deleteValue
 // @grant         GM_xmlhttpRequest
 // ==/UserScript==
 
 (function () {
+
+  // --------------------------------------------------------------------
+  // EDIT THESE TWO LINES
+  // To find your secret, do this:
+  // - go to your Pinboard homepage: https://pinboard.in/
+  // - click on the orange RSS link on top right
+  // - copy the secret in the URL
+  // --------------------------------------------------------------------
+  var user = '';
+  var secret = '';
+  // --------------------------------------------------------------------
+
   var msg = '',
     html = '',
     queryStr = '',
     jsonUrl = '',
     jsonData = '';
-
-  function handleSecret() {
-    var secret = window.location.href.replace(/^.*\/secret:([^\/]+)\/.*$/g, "$1"),
-      user = window.location.href.replace(/^.*\/u:([^\/]+)\/.*$/g, "$1");
-    GM_setValue('secret', secret);
-    GM_setValue('user', user);
-  }
 
   function initResultBox() {
     // Create the results container
@@ -66,19 +67,13 @@
   }
 
   function handleSearch() {
-    var user = GM_getValue('user'),
-      secret = GM_getValue('secret');
-
     // Remove any previously created box
     $('#PinboardInGoogle').remove();
 
-    if (undefined === user || undefined === secret) {
+    if ('' === user || '' === secret) {
       initResultBox();
       html = '<p class="title">Pinboard bookmarks</p>';
-      html += '<p>To configure this:</p><ol>';
-      html += '<li style="list-style: decimal inside">go to <a href="https://pinboard.in/">your Pinboard homepage</a></li>';
-      html += '<li style="list-style: decimal inside">click on the orange "<span style="color: orange">RSS</span>" link on top right</li>';
-      html += '<li style="list-style: decimal inside">come back here</li></ol>';
+      html += '<p>You need to edit the userscript to define your username and secret.</p>';
       $('#PinboardInGoogle').html(html);
     } else {
       // Get the query value

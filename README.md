@@ -1,6 +1,6 @@
 # PinboardInGoogle
 
-This userscript shows Pinboard bookmarks before Google search results.
+This userscript shows your own Pinboard bookmarks before Google Search results.
 
 It gets the query from Google Search's form and use [Pinboard's feeds](https://pinboard.in/howto/#rss) — using the JSON format — to get bookmarks with the same keywords as tags.
 
@@ -14,9 +14,7 @@ Install [the Greasemonkey extension](https://addons.mozilla.org/fr/firefox/addon
 
 ### Chrome
 
-**Currently [doesn't work](https://github.com/nhoizey/PinboardInGoogle/issues/7), sorry.**
-
-Download [the userscript file](https://github.com/nhoizey/PinboardInGoogle/raw/master/PinboardInGoogle.user.js) and drag it into [the extensions page](chrome://extensions).
+Install [the Tampermonkey extension](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) and then open [the raw version of the script](https://github.com/nhoizey/PinboardInGoogle/raw/master/PinboardInGoogle.user.js).
 
 ## Contributing
 
