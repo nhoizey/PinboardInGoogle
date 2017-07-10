@@ -1,33 +1,25 @@
 // Copyright (c) Nicolas Hoizey 2015
 // Released under the MIT license
 //
-// PinboardInGoogle
-// userscript to show your Pinboard bookmarks alongside Google Search results
-// https://github.com/nhoizey/PinboardInGoogle/
-//
-// Author
-// Nicolas Hoizey <nicolas@hoizey.com>
-//
 // --------------------------------------------------------------------
 // This is a UserScript.
 //
-// To install it on Firefox, you need the Greasemonkey addon:
-//   http://greasemonkey.mozdev.org/
-// Nothing is needed to install it on Chrome
+// Read here how to install and use it:
+// https://github.com/nhoizey/PinboardInGoogle
 // --------------------------------------------------------------------
 //
 // ==UserScript==
 // @name          PinboardInGoogle
-// @description   shows your Pinboard bookmarks before Google Search results
-// @copyright     2015, Nicolas Hoizey (http://gasteroprod.com/)
+// @namespace     com.nicolas-hoizey.lab
+// @description   Shows your Pinboard bookmarks before Google Search results
+// @author        Nicolas Hoizey (https://nicolas-hoizey.com)
 // @license       MIT; https://github.com/nhoizey/PinboardInGoogle/blob/master/LICENSE
 // @icon          https://pinboard.in/bluepin.gif
-// @namespace     com.gasteroprod.lab
 // @version       2.0
 // @downloadURL   https://github.com/nhoizey/PinboardInGoogle/raw/master/PinboardInGoogle.user.js
 // @include       http://www.google.*/*
 // @include       https://www.google.*/*
-// @require       https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js
+// @require       https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js
 // @grant         GM_xmlhttpRequest
 // ==/UserScript==
 

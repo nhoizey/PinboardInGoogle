@@ -16,6 +16,19 @@ Install [the Greasemonkey extension](https://addons.mozilla.org/fr/firefox/addon
 
 Install [the Tampermonkey extension](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) and then open [the raw version of the script](https://github.com/nhoizey/PinboardInGoogle/raw/master/PinboardInGoogle.user.js).
 
+## Configuration
+
+Find these lines in the script, to edit the values:
+```javascript
+var user = '';
+var secret = '';
+```
+
+To find your secret, do this:
+- go to your Pinboard homepage: https://pinboard.in/
+- click on the orange RSS link on top right
+- copy the secret in the URL
+
 ## Contributing
 
 Feel free to fork, fix and [submit a pull requests](https://github.com/nhoizey/PinboardInGoogle/pulls). Alternatively, [open issues](https://github.com/nhoizey/PinboardInGoogle/issues/new) for bugs and feature requests.
